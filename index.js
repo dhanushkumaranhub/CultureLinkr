@@ -23,7 +23,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 submitBtn.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent form from refreshing the page
+    event.preventDefault(); 
 
     let allFilled = true;
 
@@ -34,8 +34,8 @@ submitBtn.addEventListener("click", (event) => {
     });
 
     if (allFilled) {
-        successMessage.style.display = "block"; // Show success message
-        triggerCrackers(); // Call the cracker effect function
+        successMessage.style.display = "block"; 
+        triggerCrackers();
     } else {
         alert("Please fill out all fields.");
         successMessage.style.display = "none"; // Hide the success message if any input is empty
@@ -46,7 +46,6 @@ backBtn.addEventListener("click", () => {
     form.classList.remove('secActive');
 });
 
-// Fireworks cracker effect
 function triggerCrackers() {
     const canvas = document.getElementById('crackersCanvas');
     const ctx = canvas.getContext('2d');
@@ -68,7 +67,7 @@ function triggerCrackers() {
         update() {
             this.x += this.speedX;
             this.y += this.speedY;
-            this.size *= 0.95; // Gradually reduce the size for the explosion effect
+            this.size *= 0.95; 
         }
         draw() {
             ctx.fillStyle = this.color;
@@ -84,7 +83,7 @@ function triggerCrackers() {
             const speedX = (Math.random() - 0.5) * 8;
             const speedY = (Math.random() - 0.5) * 8;
             const size = Math.random() * 5 + 1;
-            const color = `hsl(${Math.random() * 360}, 100%, 50%)`; // Random color
+            const color = `hsl(${Math.random() * 360}, 100%, 50%)`; 
             particlesArray.push(new Particle(x, y, size, speedX, speedY, color));
         }
     }
@@ -94,7 +93,6 @@ function triggerCrackers() {
             particlesArray[i].update();
             particlesArray[i].draw();
 
-            // Remove particles that have shrunk too small
             if (particlesArray[i].size < 0.2) {
                 particlesArray.splice(i, 1);
                 i--;
@@ -110,7 +108,6 @@ function triggerCrackers() {
         }
     }
 
-    // Trigger explosion at random positions on the screen
     createParticles(window.innerWidth / 2, window.innerHeight / 2);
     animate();
 }
