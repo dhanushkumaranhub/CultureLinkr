@@ -1,4 +1,4 @@
-/* ===== Google Font Import - Poppins ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
 * {
@@ -60,7 +60,6 @@ body {
     margin-top: 16px;
     min-height: 550px;
     overflow: hidden;
-    /* Changed from visible to hidden */
 }
 
 .container form .form {
@@ -68,7 +67,6 @@ body {
     background-color: #fff;
     transition: 0.3s ease;
     width: 100%;
-    /* Ensure the form takes full width */
 }
 
 .container form .form.second {
@@ -108,9 +106,7 @@ form .fields .input-field {
     display: flex;
     flex-direction: column;
     flex: 1 1 calc(33.33% - 15px);
-    /* Responsive width */
     min-width: 220px;
-    /* Ensure a minimum width for input fields */
 }
 
 .input-field label {
@@ -129,13 +125,11 @@ select {
     border-radius: 5px;
     border: 1px solid #aaa;
     padding: 10px;
-    /* Increased padding for better visibility */
     height: 42px;
     margin: 8px 0;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Focus styles */
 .input-field input:focus,
 .input-field textarea:focus,
 .input-field select:focus {
@@ -229,9 +223,7 @@ form .buttons button,
 @media (max-width: 750px) {
     .container form {
         overflow-y: auto;
-        /* Allow vertical scroll if needed */
         overflow-x: hidden;
-        /* Prevent horizontal scroll */
     }
 
     .container form::-webkit-scrollbar {
@@ -240,29 +232,24 @@ form .buttons button,
 
     form .fields .input-field {
         flex: 1 1 100%;
-        /* Make fields full width on mobile */
         min-width: 0;
-        /* Remove minimum width constraint */
     }
 
     form .buttons {
         flex-direction: column;
         align-items: stretch;
-        /* Stretch to full width */
     }
 
     form .buttons button,
     .backBtn {
         margin-right: 0;
         margin-bottom: 10px;
-        /* Space between buttons */
     }
 }
 
 @media (max-width: 550px) {
     form .fields .input-field {
         flex: 1 1 100%;
-        /* Ensure full width on smaller screens */
     }
 }
 
